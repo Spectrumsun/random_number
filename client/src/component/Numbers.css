@@ -1,0 +1,30 @@
+.wrapper {
+  width: 13%;
+  text-align: center;
+}
+
+.icon{
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 !important;
+}
+ul li {
+  margin: 10px;
+}
+
+.center_total{
+  text-align: center;
+}
+
+.number_center{
+  text-align: end;
+}
+
+.space_button {
+  margin-right: 65%
+}

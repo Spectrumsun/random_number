@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RandomNumber /> renders correctly 1`] = `
+<div>
+  <nav
+    className="navbar navbar-expand-lg navbar-dark bg-dark"
+  >
+    <button
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-target="#navbarNav"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse container"
+      id="navbarNav"
+    >
+      <a
+        className="navbar-brand "
+        href="/"
+      >
+        Random Numbers
+      </a>
+      <ul
+        className="navbar-nav"
+      >
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link active icon"
+            id="getButton"
+            onClick={[Function]}
+          >
+            View saved numbers
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br />
+  <div
+    className="container jumbotron"
+  >
+    <h1
+      className="display-8"
+    >
+      Random Phone Number Generator
+    </h1>
+    <button
+      className="btn btn-primary btn-lg"
+      id="handleGenerate"
+      onClick={[Function]}
+      role="button"
+    >
+      Generate New Numbers
+    </button>
+    <br />
+  </div>
+  <div
+    className="container"
+  >
+    <div>
+      <ul />
+      <ul />
+    </div>
+  </div>
+</div>
+`;

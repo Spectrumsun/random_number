@@ -1,0 +1,18 @@
+language: node_js
+node_js: 
+    - "11.1.0"
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH="$HOME/.yarn/bin:$PATH"
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+install:
+  - yarn && yarn global add codecov codeclimate-test-reporter
+script: 
+    - yarn test
+after_script:
+  - ./cc-test-reporter after-build --exit-code
+ 
+    
+

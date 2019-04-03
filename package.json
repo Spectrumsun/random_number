@@ -1,0 +1,98 @@
+{
+  "name": "Random_Phone_Number_Generator",
+  "version": "1.0.0",
+  "description": "random phone number",
+  "main": "index.js",
+  "author": "taiwo sunday",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.5",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
+    "core-js": "^3.0.0",
+    "cors": "^2.8.5",
+    "css-loader": "^2.1.1",
+    "debug": "^4.1.1",
+    "dotenv": "^7.0.0",
+    "dotenv-webpack": "^1.7.0",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "morgan": "^1.9.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.14.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "regenerator-runtime": "^0.13.2",
+    "scss-loader": "^0.0.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-merge": "^4.2.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.7.0",
+    "codecov": "^3.2.0",
+    "concurrently": "^4.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "^5.16.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.5.0",
+    "moxios": "^0.4.0",
+    "nodemon": "^1.18.10",
+    "supertest": "^4.0.2"
+  },
+  "scripts": {
+    "dev:server": "DEBUG=log nodemon --exec babel-node src/index.js",
+    "dev:client": "DEBUG=log concurrently --kill-others \"yarn run webpack:watch\" \"nodemon --ignore lib --ignore src/data --exec  babel-node src/index.js\"",
+    "build": "yarn clean && yarn build:server",
+    "serve": "node dist/index.js",
+    "test": "jest -u --no-cache --env=jsdom && codecov",
+    "clean": "rm -rf dist && mkdir dist",
+    "build:server": "babel src --out-dir dist",
+    "webpack:watch": "webpack --watch --config webpack.dev.config.js",
+    "webpack:build": "webpack --config webpack.prod.config.js --progress --profile --color",
+    "start": "yarn build && yarn webpack:build && yarn serve"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "client/**/*.js",
+      "!src/index.js",
+      "!client/public",
+      "!client/src/App.js"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/?(*.)(spec|test)js",
+      "<rootDir>/client/**/__tests__/**/?(*.)(spec|test)js",
+      "<rootDir>/src/**/?(*.)(spec|test).js",
+      "<rootDir>/client/**/?(*.)(spec|test).js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/data/",
+      "<rootDir>/client/public/",
+      "<rootDir>/client/src/App.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
+    "testEnvironment": "node"
+  },
+  "engines": {
+    "yarn": "1.15.2"
+  }
+}
