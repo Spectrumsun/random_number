@@ -93,6 +93,6 @@
     "testEnvironment": "node"
   },
   "engines": {
-    "yarn": "1.15.2"
+    "yarn": "1.16.0"
   }
 }
